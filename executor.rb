@@ -10,6 +10,6 @@ MQTT::Client.connect(:remote_host => host, :username => username, :password => p
   c.get(username) do |topic, message|
     puts "#{topic}: #{message}"
     json = JSON.parse(message)
-    Command.exec(json['payload']['command'])
+    Command.exec(json['data']['payload']['command'])
   end
 end
