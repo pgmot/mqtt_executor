@@ -7,6 +7,6 @@ password = ENV['MQTT_PASS']
 
 MQTT::Client.connect(:remote_host => host, :username => username, :password => password) do |c|
   c.get(username) do |topic, message|
-    Command.exec(message['command'])
+    Command.exec(message['data']['payload']['command'])
   end
 end
