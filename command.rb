@@ -28,7 +28,7 @@ class Command
     when 'tv_power'
       Command.tv_power
     else
-      puts "Command not found..."
+      puts "#{command} command not found..."
     end
   end
 end
